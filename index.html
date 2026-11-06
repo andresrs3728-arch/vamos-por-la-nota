@@ -1931,7 +1931,7 @@ details.av { border-top: 1px solid var(--linea); padding-top: 2px; } details.av[
   var $$ = function (s, el) { return Array.prototype.slice.call((el || document).querySelectorAll(s)); };
 
   // ---------- estado ----------
-  var KEY = 'vpn-tommy-v1';
+  var KEY = 'vpn-v1';
   var st = { cfg: { xl: 'es;' }, stats: {}, vistas: {}, plan: {}, fallos: [], sims: [], ult: null };
   try { var g = JSON.parse(localStorage.getItem(KEY)); if (g) for (var k in g) st[k] = g[k]; } catch (e) { }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) { } }
@@ -2128,7 +2128,7 @@ details.av { border-top: 1px solid var(--linea); padding-top: 2px; } details.av[
     if (st.ult && estrellas(st.ult) < 3) sig = st.ult;
     var cuenta = d > 1 ? 'Faltan <b>' + d + ' días</b> para el examen final' : (d === 1 ? 'El examen final es <b>mañana</b>' : (d === 0 ? 'El examen final es <b>hoy</b>' : ''));
     var pct = Math.round(dom / tot * 100), C = 2 * Math.PI * 52;
-    var h = '<section class="hero"><div class="hero-t"><p class="kicker">Matemáticas Financieras · la ruta de Tommy</p><h1>Vamos por<br>la nota.</h1>' +
+    var h = '<section class="hero"><div class="hero-t"><p class="kicker">Matemáticas Financieras · la ruta de Tomy</p><h1>Vamos por<br>la nota.</h1>' +
       (cuenta ? '<p class="cuenta">' + cuenta + ' <span>miércoles 11 de noviembre · vale el 30%</span></p>' : '') +
       '<div class="hero-b"><a class="btn pri gr" href="#/l/' + sig + '">' + (st.ult ? 'Seguir' : 'Empezar') + ': ' + CONT.lecciones[sig].titulo + ' →</a><a class="btn bl gr" href="#/practica">Práctica rápida</a></div></div>' +
       '<div class="anillo"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="a0"/><circle cx="60" cy="60" r="52" class="a1" stroke-dasharray="' + C + '" stroke-dashoffset="' + (C * (1 - dom / tot)) + '"/></svg><div><b id="prog-num">' + dom + '</b><span>de ' + tot + ' lecciones<br>dominadas</span></div></div></section>';
